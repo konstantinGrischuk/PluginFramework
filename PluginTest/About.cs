@@ -30,18 +30,15 @@ namespace PluginTest
         {
             foreach (var plugin in PluginFramework.PluginManager.Plugins)
             {
-                var img = resizeImage(plugin.GetIcon(), new Size(30, 30));
-                exListBox1.Items.Add(new exListBoxItem(0, plugin.Name, plugin.Version + " " + plugin.Description, img));
+                var img = ResizeImage(plugin.GetIcon(), new Size(30, 30));
+                exListBox1.Items.Add(new ExListBoxItem(0, plugin.Name, plugin.Version + " " + plugin.Description, img));
             }
         }
-        public static Image resizeImage(Image imgToResize, Size size)
+        public static Image ResizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

@@ -7,8 +7,7 @@ namespace PluginTest
 {
     public partial class Form1 : Form
     {
-        private List<object> listwindow = new List<object>();
-
+    
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +41,7 @@ namespace PluginTest
             }
         }
 
-        private void файлToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void ФайлToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
             IPlugin v = PluginManager.Plugins.Find(x => x.GetMenuItem().Name == e.ClickedItem.Name);
@@ -54,7 +53,7 @@ namespace PluginTest
             }
         }
 
-        private void оПриложенииToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ОПриложенииToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DisplayPanel.Controls.Clear();
             About a = new About();

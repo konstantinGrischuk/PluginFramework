@@ -13,15 +13,17 @@ namespace Plugin
         }
         public ToolStripMenuItem GetMenuItem()
         {
-            ToolStripMenuItem plug = new ToolStripMenuItem("PluginButton");
-            plug.Tag = "Файл";
-            plug.Name = "PluginButton";
-            plug.Image = Res.menu_icon;
-            plug.Click += new System.EventHandler(this.click);
+            ToolStripMenuItem plug = new ToolStripMenuItem("PluginButton")
+            {
+                Tag = "Файл",
+                Name = "PluginButton",
+                Image = Res.menu_icon
+            };
+            plug.Click += new EventHandler(this.Click);
             return plug;
         }
 
-        private void click(object sender, EventArgs e)
+        private void Click(object sender, EventArgs e)
         {
             //   MessageBox.Show("Click");
 

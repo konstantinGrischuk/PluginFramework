@@ -53,7 +53,7 @@ namespace PluginTest
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
-            this.файлToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.файлToolStripMenuItem_DropDownItemClicked);
+            this.файлToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ФайлToolStripMenuItem_DropDownItemClicked);
             // 
             // statusStrip1
             // 
@@ -76,7 +76,7 @@ namespace PluginTest
             this.оПриложенииToolStripMenuItem.Name = "оПриложенииToolStripMenuItem";
             this.оПриложенииToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             this.оПриложенииToolStripMenuItem.Text = "О приложении";
-            this.оПриложенииToolStripMenuItem.Click += new System.EventHandler(this.оПриложенииToolStripMenuItem_Click);
+            this.оПриложенииToolStripMenuItem.Click += new System.EventHandler(this.ОПриложенииToolStripMenuItem_Click);
             // 
             // Form1
             // 

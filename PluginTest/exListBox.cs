@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace testexListBox
 {
-    class exListBoxItem
+    class ExListBoxItem
     {
         private string _title;
         private string _details;
@@ -16,7 +16,7 @@ namespace testexListBox
             set { _id = value; }
         }
 
-        public exListBoxItem(int id, string title, string details, Image image)
+        public ExListBoxItem(int id, string title, string details, Image image)
         {
             _id = id;
             _title = title;
@@ -42,7 +42,7 @@ namespace testexListBox
             set { _itemImage = value; }
         }
 
-        public void drawItem(DrawItemEventArgs e, Padding margin,
+        public void DrawItem(DrawItemEventArgs e, Padding margin,
                              Font titleFont, Font detailsFont, StringFormat aligment,
                              Size imageSize)
         {
@@ -90,9 +90,9 @@ namespace testexListBox
     {
 
         private Size _imageSize;
-        private StringFormat _fmt;
-        private Font _titleFont;
-        private Font _detailsFont;
+        private readonly StringFormat _fmt;
+        private readonly Font _titleFont;
+        private readonly Font _detailsFont;
 
         public exListBox(Font titleFont, Font detailsFont, Size imageSize,
                          StringAlignment aligment, StringAlignment lineAligment)
@@ -101,9 +101,11 @@ namespace testexListBox
             _detailsFont = detailsFont;
             _imageSize = imageSize;
             this.ItemHeight = _imageSize.Height + this.Margin.Vertical;
-            _fmt = new StringFormat();
-            _fmt.Alignment = aligment;
-            _fmt.LineAlignment = lineAligment;
+            _fmt = new StringFormat
+            {
+                Alignment = aligment,
+                LineAlignment = lineAligment
+            };
             _titleFont = titleFont;
             _detailsFont = detailsFont;
         }
@@ -127,8 +129,8 @@ namespace testexListBox
             // prevent from error Visual Designer
             if (this.Items.Count > 0)
             {
-                exListBoxItem item = (exListBoxItem)this.Items[e.Index];
-                item.drawItem(e, this.Margin, _titleFont, _detailsFont, _fmt, this._imageSize);
+                ExListBoxItem item = (ExListBoxItem)this.Items[e.Index];
+                item.DrawItem(e, this.Margin, _titleFont, _detailsFont, _fmt, this._imageSize);
             }
         }
 
