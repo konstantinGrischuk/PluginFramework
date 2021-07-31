@@ -31,9 +31,9 @@ namespace PluginTest
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПриложенииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.DisplayPanel = new System.Windows.Forms.Panel();
-            this.оПриложенииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,13 @@ namespace PluginTest
             this.файлToolStripMenuItem.Text = "Файл";
             this.файлToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ФайлToolStripMenuItem_DropDownItemClicked);
             // 
+            // оПриложенииToolStripMenuItem
+            // 
+            this.оПриложенииToolStripMenuItem.Name = "оПриложенииToolStripMenuItem";
+            this.оПриложенииToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.оПриложенииToolStripMenuItem.Text = "О приложении";
+            this.оПриложенииToolStripMenuItem.Click += new System.EventHandler(this.ОПриложенииToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
@@ -71,13 +78,6 @@ namespace PluginTest
             this.DisplayPanel.Size = new System.Drawing.Size(800, 404);
             this.DisplayPanel.TabIndex = 5;
             // 
-            // оПриложенииToolStripMenuItem
-            // 
-            this.оПриложенииToolStripMenuItem.Name = "оПриложенииToolStripMenuItem";
-            this.оПриложенииToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.оПриложенииToolStripMenuItem.Text = "О приложении";
-            this.оПриложенииToolStripMenuItem.Click += new System.EventHandler(this.ОПриложенииToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +88,7 @@ namespace PluginTest
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
