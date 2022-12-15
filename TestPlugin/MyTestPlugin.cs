@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Plugin
 {
+    [Serializable]
     public class MyTestPlugin : IPlugin
     {
         public Image GetIcon()
@@ -13,10 +14,10 @@ namespace Plugin
         }
         public ToolStripMenuItem GetMenuItem()
         {
-            ToolStripMenuItem plug = new ToolStripMenuItem("PluginButton")
+            ToolStripMenuItem plug = new ToolStripMenuItem("PluginButton2")
             {
                 Tag = "Файл",
-                Name = "PluginButton",
+                Name = "PluginButton2",
                 Image = Res.menu_icon
             };
             plug.Click += new EventHandler(this.Click);
@@ -25,11 +26,11 @@ namespace Plugin
 
         private void Click(object sender, EventArgs e)
         {
-            //   MessageBox.Show("Click");
+         
 
         }
 
-        public string Name => "Тестовый плагин";
+        public string Name => "Тестовый плагин2";
 
         public string Description => "Первый плагин созданый для теста фрэймворка";
 
@@ -37,7 +38,7 @@ namespace Plugin
 
         public string Version => "1.0.0.0";
 
-        public UserControl MainInterface => new MainPluginInterface();
+        public UserControl MainInterface => new TestPlug2();
 
         public PlugType PlugType => PlugType.Window;
 

@@ -3,22 +3,24 @@ using System.Windows.Forms;
 
 namespace Plugin
 {
-    public partial class MainPluginInterface : UserControl
+    public partial class TestPlug2 : UserControl
     {
-        private static MainPluginInterface _instance;
-        public MainPluginInterface Instance
+        private static TestPlug2 _instance;
+        public TestPlug2 Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new MainPluginInterface();
+                    _instance = new TestPlug2();
+                    return _instance;
                 }
-
-                return _instance;
+                else  
+                 return _instance;
+              
             }
         }
-        public MainPluginInterface()
+        public TestPlug2()
         {
             InitializeComponent();
         }
@@ -32,7 +34,7 @@ namespace Plugin
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("wwwwwwww");
         }
     }
 }

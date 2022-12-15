@@ -21,7 +21,7 @@ namespace PluginFramework
                     {
                         Plugins.Add(plug);
                     }
-
+                  
                 }
 
             }
@@ -45,7 +45,9 @@ namespace PluginFramework
                             {
                                 return pl;
                             }
+                            
                         }
+                       
                     }
                 }
                 return null;

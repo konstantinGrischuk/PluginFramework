@@ -91,6 +91,10 @@
       <Project>{ef407e1b-0738-4b90-856f-072b81b20d09}</Project>
       <Name>PluginFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestPlugin\TestPlugin.csproj">
+      <Project>{378ac3c8-7e88-4d2e-b0d9-402b2e1a2c39}</Project>
+      <Name>TestPlugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ico.ico" />

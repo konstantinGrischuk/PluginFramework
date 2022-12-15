@@ -1,6 +1,8 @@
-﻿using PluginFramework;
+﻿using Plugin;
+using PluginFramework;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace PluginTest
@@ -25,6 +27,7 @@ namespace PluginTest
 
                     foreach (ToolStripMenuItem i in menuStrip1.Items)
                     {
+                      
                         if (plug.Tag == null)
                         {
                             menuStrip1.Items.Add(plug);
@@ -32,6 +35,7 @@ namespace PluginTest
                         }
                         if (i.Text == plug.Tag.ToString())
                         {
+                          
                             i.DropDownItems.Add(plug);
                             break;
                         }
@@ -43,14 +47,29 @@ namespace PluginTest
 
         private void ФайлToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
-            IPlugin v = PluginManager.Plugins.Find(x => x.GetMenuItem().Name == e.ClickedItem.Name);
-            if (v != null)
+            foreach(Control c in DisplayPanel.Controls)
             {
-                DisplayPanel.Controls.Clear();
-                DisplayPanel.Controls.Add(v.MainInterface);
-                v.MainInterface.Dock = DockStyle.Fill;
+                c.Visible = false;
             }
+            IPlugin v = PluginManager.Plugins.Find(x => x.GetMenuItem().Name == e.ClickedItem.Name);        
+            var i = DisplayPanel.Controls.Find(v.MainInterface.Name, true);
+            { 
+                if (i.Length == 0)
+                {               
+                    DisplayPanel.Controls.Add(v.MainInterface);
+                    v.MainInterface.Dock = DockStyle.Fill;
+             
+                    v.MainInterface.Visible = true;
+                   
+                }
+                else
+                { 
+                    i[0].Dock = DockStyle.Fill;
+                    i[0].Visible = true; 
+                }
+            }
+
+
         }
 
         private void ОПриложенииToolStripMenuItem_Click(object sender, EventArgs e)
